@@ -16,8 +16,33 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+
+    int temp = 34;
+    signed int integerSigned = -15433;
+    unsigned int intengerUnsigned = 12884;
+    char numberVariable = 0;
+    char letterVariable = 'c';
+    float percentageVariable = 0.5f;
+    double bigPercentageVariable = 0.243543252435;
+    bool trueBooleanValue = true;
+    bool falseBooleanValue = false;
+
+    int seven = 7;
+    int two = 2;
+
+    float result = (float)seven /(float)two;
+
+    float celcius = 23.0f;
+    
+    float resulttwo = celcius * ((float)9/5) + 32;
+    
+    
+    int hello = 0;
+
     return YES;
 }
+
+
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
