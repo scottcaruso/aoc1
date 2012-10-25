@@ -47,6 +47,11 @@
     } else {
         NSLog(@"i have no idea how many torches you have");
     }
+
+    //for loop
+    for (int x = 0; x < 10; x++){
+        NSLog(@"We are currently on number %d",x);
+    }
     
     return YES;
 }
