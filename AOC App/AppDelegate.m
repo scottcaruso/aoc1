@@ -17,7 +17,7 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
 
-    //The code below is for a mock state election. It determines if your candidate won or some other candidate.
+    //The code below is for a mock election in a given state. It determines if your candidate won or some other candidate.
     float candidatePercentageOfVote = 45.221f; //enter "your" value here
     float thirdPartyVotes = 2.888f; //enter what percentage of the vote third parties get
     float combinedTotal = candidatePercentageOfVote + thirdPartyVotes;
@@ -25,9 +25,9 @@
 
     NSLog(@"The results from this state are in!");
     
-    //#4 - if, else if, and else check to determine who won and what to output
+    //#4 - if, else if, and else check to determine who won the state and what to output
     if ((candidatePercentageOfVote > thirdPartyVotes) && (candidatePercentageOfVote > otherCandidatePercentageOfVote)){
-        //#2 - Below, take floats and convert to ints.
+        //#2 - Below, take floats and convert to ints to get an estimate for margin of victory.
         int percentageDifferenceOtherMajor = (int)candidatePercentageOfVote - (int)otherCandidatePercentageOfVote;
         int percentageDifferenceThirdParty = (int)candidatePercentageOfVote - (int)thirdPartyVotes;
         NSLog(@"Congratulations, your candidate won this state, beating the other major candidate by approximately %d percentage points and the third party candidate by %d percentage points.",percentageDifferenceOtherMajor,percentageDifferenceThirdParty);
@@ -44,10 +44,8 @@
     //#3 - AND/OR comparions with Float, Int, Bool
     int anticipatedMargin = 10;
     float marginOfVictory = 3.4f; //Set margin of victory. Negative number means we lost.
-    BOOL didWeWin = NO;
-    
+    BOOL didWeWin = NO;    
     NSLog(@"Time to move on to the next state...");
-    
     if ((marginOfVictory < anticipatedMargin) || (didWeWin == NO)){
         NSLog(@"We had a disappointing night in this state. We expected to win by %d points, but we didn't.",anticipatedMargin);
     } else if ((marginOfVictory > anticipatedMargin) && (anticipatedMargin >= 10)){
@@ -63,7 +61,6 @@
     int totalVotesCast = 900000; //the total number of votes cast in this new state
     int votesCountedPerHour = 150000; //the number of votes that get tallied per hour in this state
     int hoursPassed = 0; //do not change this
-
     for (int x = 0; x<=totalVotesCast; x+=votesCountedPerHour){
         int votesLeftToCount = totalVotesCast - (votesCountedPerHour*hoursPassed);
         if (votesLeftToCount > 0){
@@ -73,6 +70,8 @@
             NSLog(@"It took %d hours, but the votes are finally all tallied!",hoursPassed);
         }
     }
+    
+    NSLog(@"While we wait for more results, let's call in a campaign surrogate for an interview!");
 
     //#6 -- The below determines when a campaign surrogate is done with an interview with one network and moves on to the next.
     int numberOfInterviews = 4;
@@ -89,6 +88,7 @@
     }
     NSLog(@"The interviews are now over! Hopefully we can call the race soon!");
 
+    //#7 -- While loop. How many states left before the election is over?
     int statesThatHaveCalled = 42;
     while (statesThatHaveCalled < 50){
         int statesLeft = 50 - statesThatHaveCalled;
@@ -99,8 +99,6 @@
     
     return YES;
 }
-
-
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
