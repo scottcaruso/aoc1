@@ -37,6 +37,16 @@
     NSLog(@"celcius=%.2f", celcius);
     
     float resulttwo = celcius * ((float)9/5) + 32;
+
+    //boolean logic practice
+    int torch = 12;
+    if (torch == 0){
+        NSLog(@"you have no torches");
+    } else if (torch == 1){
+        NSLog(@"you have one torch");
+    } else {
+        NSLog(@"i have no idea how many torches you have");
+    }
     
     return YES;
 }
