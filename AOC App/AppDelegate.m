@@ -17,40 +17,14 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
 
-    int temp = 34;
-    NSLog(@"temp=%d",temp);
-    signed int integerSigned = -15433;
-    unsigned int intengerUnsigned = 12884;
-    char numberVariable = 0;
-    char letterVariable = 'c';
-    float percentageVariable = 0.5f;
-    double bigPercentageVariable = 0.243543252435;
-    bool trueBooleanValue = true;
-    bool falseBooleanValue = false;
+    int electoralVotes = 269;
 
-    int seven = 7;
-    int two = 2;
-
-    float result = (float)seven /(float)two;
-
-    float celcius = 23.0f;
-    NSLog(@"celcius=%.2f", celcius);
-    
-    float resulttwo = celcius * ((float)9/5) + 32;
-
-    //boolean logic practice
-    int torch = 12;
-    if (torch == 0){
-        NSLog(@"you have no torches");
-    } else if (torch == 1){
-        NSLog(@"you have one torch");
+    if (electoralVotes < 269){
+        NSLog(@"We're sorry - your candidate has lost the election.");
+    } else if (electoralVotes == 269){
+        NSLog(@"Your candidate is tied with the other candidate, so the election will be decided in the House of Representatives.");
     } else {
-        NSLog(@"i have no idea how many torches you have");
-    }
-
-    //for loop
-    for (int x = 0; x < 10; x++){
-        NSLog(@"We are currently on number %d",x);
+        NSLog(@"Congratulations, Mr. (Mrs.) President-Elect! You've won the election!");
     }
     
     return YES;
