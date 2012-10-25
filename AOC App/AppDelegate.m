@@ -18,6 +18,7 @@
     [self.window makeKeyAndVisible];
 
     int temp = 34;
+    NSLog(@"temp=%d",temp);
     signed int integerSigned = -15433;
     unsigned int intengerUnsigned = 12884;
     char numberVariable = 0;
@@ -33,12 +34,10 @@
     float result = (float)seven /(float)two;
 
     float celcius = 23.0f;
+    NSLog(@"celcius=%.2f", celcius);
     
     float resulttwo = celcius * ((float)9/5) + 32;
     
-    
-    int hello = 0;
-
     return YES;
 }
 
