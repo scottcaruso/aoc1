@@ -119,6 +119,11 @@
         }
     }
     
+    NSMutableArray *mutableArray = [[NSMutableArray alloc] initWithCapacity:10];
+    [mutableArray addObject:@"hellotest1"];
+    [mutableArray addObject:@"test2"];
+    
+    NSLog(@"%@",[mutableArray description]);
     return YES;
 }
 
