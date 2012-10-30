@@ -96,6 +96,28 @@
         statesThatHaveCalled++;
     }
     NSLog(@"The election is over! All of the states have been called for one of the candidates.");
+
+    //Practice for this week
+    NSString *string = [[NSString alloc] initWithString:@"Hello!"];
+    int lengthOfString = [string length];
+
+    int arrayPractice[6] =
+    {
+        3, 8, 11, 224, 545, 3333
+    };
+    
+    int multiArray [3][3] =
+    {
+        {0,1,2},
+        {4,4,4},
+        {233,1222,1}
+    };
+    
+    for (int y = 0; y<3; y++){
+        for (int x = 0; x<3; x++){
+            NSLog(@"%d,%d = %d",x,y,multiArray[x][y]);
+        }
+    }
     
     return YES;
 }
