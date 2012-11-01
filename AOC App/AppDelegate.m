@@ -18,7 +18,7 @@
     [self.window makeKeyAndVisible];
 
     //The code below is for a mock election in a given state. It determines if your candidate won or some other candidate.
-    float candidatePercentageOfVote = 45.221f; //enter "your" value here
+    /*float candidatePercentageOfVote = 45.221f; //enter "your" value here
     float thirdPartyVotes = 2.888f; //enter what percentage of the vote third parties get
     float combinedTotal = candidatePercentageOfVote + thirdPartyVotes;
     float otherCandidatePercentageOfVote = (100.00f - combinedTotal);
@@ -96,7 +96,41 @@
         statesThatHaveCalled++;
     }
     NSLog(@"The election is over! All of the states have been called for one of the candidates.");
+
+    //Practice for this week
+    NSString *string = [[NSString alloc] initWithString:@"Hello!"];
+    int lengthOfString = [string length];
+
+    int arrayPractice[6] =
+    {
+        3, 8, 11, 224, 545, 3333
+    };
     
+    int multiArray [3][3] =
+    {
+        {0,1,2},
+        {4,4,4},
+        {233,1222,1}
+    };
+    
+    for (int y = 0; y<3; y++){
+        for (int x = 0; x<3; x++){
+            NSLog(@"%d,%d = %d",x,y,multiArray[x][y]);
+        }
+    }*/
+
+    int electoralVotes = 312;
+    float percentage = 53.22;   
+    NSString *testString = [[NSString alloc] initWithString:@"that means that he won!"]; 
+    NSString *practice = [[NSString alloc] initWithFormat:@"The President received %d electoral votes and %g percentage of the popular vote on election night.",electoralVotes,percentage];
+    NSString *practice2 = [[NSString alloc] initWithFormat:@"The President received %g percent of votes, so %@",percentage,testString];
+    NSLog(practice);
+    NSLog(practice2);
+    /*NSMutableArray *mutableArray = [[NSMutableArray alloc] initWithCapacity:10];
+    [mutableArray addObject:@"hellotest1"];
+    [mutableArray addObject:@"test2"];
+    
+    NSLog(@"%@",[mutableArray description]);*/
     return YES;
 }
 
