@@ -17,6 +17,8 @@
     UILabel *publisherText;
     UILabel *summaryHead;
     UILabel *summaryText;
+    UILabel *itemList;
+    UILabel *itemDetails;
     
 }
 

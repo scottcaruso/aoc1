@@ -51,7 +51,7 @@
         publisherHead.text = @"Published:";
         publisherHead.textAlignment = NSTextAlignmentRight;
         publisherHead.textColor = [UIColor magentaColor];
-        publisherHead.backgroundColor = [UIColor greenColor];
+        publisherHead.backgroundColor = [UIColor darkGrayColor];
     }
     publisherText = [[UILabel alloc] initWithFrame: CGRectMake(605.0f,140.0f,150.0f,40.0f)];
     if (publisherText != nil)
@@ -67,19 +67,49 @@
     {
         summaryHead.text = @"Summary:";
         summaryHead.textAlignment = NSTextAlignmentLeft;
-        summaryHead.textColor = [UIColor greenColor];
-        summaryHead.backgroundColor = [UIColor purpleColor];
+        summaryHead.textColor = [UIColor whiteColor];
+        summaryHead.backgroundColor = [UIColor blackColor];
     }
     summaryText = [[UILabel alloc] initWithFrame: CGRectMake(134.0f,245.0f,500.0f,200.0f)];
     if (summaryText != nil)
     {
         summaryText.text = @"\"Renegade\" tells the story of Barack Obama's 2008 Presidential campaign. It begins with his decision to run for President, and goes into great detail about the decision-making process that the soon-to-be President went through at major milestones in the process. It takes an objective look at both the successes that then-Senator Obama had as well as the hardships that campaigning led to. The name \"Renegade\" comes from the codename he was given by Secret Service on the campaign trail.";
         summaryText.textAlignment = NSTextAlignmentCenter;
-        summaryText.textColor = [UIColor lightGrayColor];
-        summaryText.backgroundColor = [UIColor redColor];
+        summaryText.textColor = [UIColor brownColor];
+        summaryText.backgroundColor = [UIColor orangeColor];
         summaryText.numberOfLines = 11;
     }
-    
+    //Array creation/functions
+    NSArray *bookItems = [[NSArray alloc] initWithObjects:@"President Obama",@"2008 presidential campaign",@"John McCain",@"election night",@"Washington D.C.",nil];
+    NSMutableString *displayString = [[NSMutableString alloc] initWithCapacity:5];
+    for (int x = 0; x<[bookItems count]; x++){
+        NSMutableString *currentItem = [[NSMutableString alloc] initWithString: bookItems[x]];
+        int length = [currentItem length];
+        if (x != ([bookItems count]-1)){
+            [currentItem insertString:@", " atIndex:length];
+        }
+        int displayLength = [displayString length];
+        [displayString insertString: currentItem atIndex:displayLength];
+    }
+    //Display list items
+    itemList = [[UILabel alloc] initWithFrame: CGRectMake(10.0f,475.0f,100.0f,40.0f)];
+    if (itemList != nil)
+    {
+        itemList.text = @"List of items:";
+        itemList.textAlignment = NSTextAlignmentLeft;
+        itemList.textColor = [UIColor yellowColor];
+        itemList.backgroundColor = [UIColor purpleColor];
+    }
+    itemDetails = [[UILabel alloc] initWithFrame: CGRectMake(234.0f,520.0f,300.0f,200.0f)];
+    if (itemDetails != nil)
+    {
+        itemDetails.text = displayString;
+        itemDetails.textAlignment = NSTextAlignmentCenter;
+        itemDetails.textColor = [UIColor lightGrayColor];
+        itemDetails.backgroundColor = [UIColor redColor];
+        itemDetails.numberOfLines = 5;
+    }
+
     //the below add the labels to the view
     [self.view addSubview:title];
     [self.view addSubview:authorHead];
@@ -88,6 +118,8 @@
     [self.view addSubview:publisherText];
     [self.view addSubview:summaryHead];
     [self.view addSubview:summaryText];
+    [self.view addSubview:itemList];
+    [self.view addSubview:itemDetails];
     
     [super viewDidLoad];
 }
