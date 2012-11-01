@@ -10,9 +10,13 @@
 
 @interface ViewController : UIViewController
 {
-    UILabel *label1;
-    UILabel *label2;
-    UILabel *label3;
+    UILabel *title;
+    UILabel *authorHead;
+    UILabel *authorText;
+    UILabel *publisherHead;
+    UILabel *publisherText;
+    UILabel *summaryHead;
+    UILabel *summaryText;
     
 }
 
