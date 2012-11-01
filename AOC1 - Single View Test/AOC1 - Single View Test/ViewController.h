@@ -9,5 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
+{
+    UILabel *label1;
+    UILabel *label2;
+    UILabel *label3;
+    
+}
 
 @end
