@@ -1,8 +1,8 @@
 //
 //  AppDelegate.m
-//  AOC1 - Single View Test
+//  AOC1 - Week 3 Practice
 //
-//  Created by Scott Caruso on 10/31/12.
+//  Created by Scott Caruso on 11/5/12.
 //  Copyright (c) 2012 Scott Caruso. All rights reserved.
 //
 
