@@ -16,8 +16,12 @@
 
 - (void)viewDidLoad
 {
+    [self printDebugInfo:@"this is a debug string"];
+    
 	// Do any additional setup after loading the view, typically from a nib.
-    self.view.backgroundColor = [UIColor cyanColor];
+
+    
+    /*    self.view.backgroundColor = [UIColor cyanColor];
     //Title
     title = [[UILabel alloc] initWithFrame: CGRectMake(184.0f,10.0f,400.0f,30.0f)];
     if (title != nil)
@@ -119,7 +123,7 @@
     [self.view addSubview:summaryHead];
     [self.view addSubview:summaryText];
     [self.view addSubview:itemList];
-    [self.view addSubview:itemDetails];
+    [self.view addSubview:itemDetails];*/
     
     [super viewDidLoad];
 }
@@ -128,6 +132,11 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)printDebugInfo:(NSString*)debugString
+{
+    NSLog(@"%@", debugString);
 }
 
 @end
