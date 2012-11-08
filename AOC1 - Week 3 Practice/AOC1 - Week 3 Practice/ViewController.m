@@ -16,11 +16,26 @@
 
 - (void)viewDidLoad
 {
-    //Create a function called Add. This function will take two NSInteger or int types and return the result of an addition between these two.
+    //These are the variables used in the functions below.
     int integerOne = 8;
-    int integerTwo = 6;
-    int resultValue = [self Add:(integerOne) secondValue:(integerTwo)];
+    int integerTwo = 8;
+    
+    //Create a function called Add. This function will take two NSInteger or int types and return the result of an addition between these two.
+    int resultValue = [self Add:integerOne secondValue:integerTwo];
     NSLog(@"%d",resultValue);
+    
+
+    //Create a BOOL function called Compare that takes two NSInteger values. Return YES or NO based on whether the values are equal.
+    BOOL compareResult = [self Compare:integerOne secondValue:integerTwo];
+    if (compareResult == YES)
+    {
+        NSLog(@"The numbers are the same!");
+    }
+    else
+    {
+        NSLog(@"The numbers are not the same.");
+    }
+    
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
@@ -36,6 +51,15 @@
 {
     int resultValue = valueOne + valueTwo;
     return resultValue;
+}
+
+//This is the Compare function that is called in viewDidLoad.
+-(BOOL)Compare:(NSInteger)valueOne secondValue:(NSInteger)valueTwo
+{
+    if (valueOne == valueTwo)
+    {
+        return YES;
+    }
 }
 
 @end
