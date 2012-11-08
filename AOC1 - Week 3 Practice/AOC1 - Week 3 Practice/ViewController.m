@@ -16,9 +16,11 @@
 
 - (void)viewDidLoad
 {
-    int firstValue = [self testFunction];
-    int resultValue = [self addNumbers:(firstValue) secondValue:(4)];
-    NSLog(@"%d,%d",firstValue,resultValue);
+    //Create a function called Add. This function will take two NSInteger or int types and return the result of an addition between these two.
+    int integerOne = 8;
+    int integerTwo = 6;
+    int resultValue = [self Add:(integerOne) secondValue:(integerTwo)];
+    NSLog(@"%d",resultValue);
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
@@ -29,16 +31,8 @@
     // Dispose of any resources that can be recreated.
 }
 
--(int)testFunction
-{
-    int test = 6;
-    return test;
-}
-
-int valueOne = 6;
-int valueTwo = 4;
-
--(int)addNumbers:(NSInteger)valueOne secondValue:(NSInteger)valueTwo
+//This is the Add function that is called in viewDidLoad.
+-(int)Add:(NSInteger)valueOne secondValue:(NSInteger)valueTwo
 {
     int resultValue = valueOne + valueTwo;
     return resultValue;
