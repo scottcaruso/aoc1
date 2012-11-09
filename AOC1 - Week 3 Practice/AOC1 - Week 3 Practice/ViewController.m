@@ -24,18 +24,19 @@
     
     //Step 4 - Call the Append function with two NSStrings. Capture the result and display a UIAlertView with the appended string using displayAlertWithString.
     NSString *stringResult = [self Append:(stringOne) secondString:(stringTwo)];
-    UIAlertView *stringAlert = [[UIAlertView alloc] initWithTitle:@"Alert View Test" message: stringResult delegate: nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
-    if (stringAlert != nil)
-    {
-        [stringAlert show];
-    }
+    [self displayAlertWithString:stringResult];
     
     //Step 6 - Call the Add function passing in two integer values. Capture the return of this function into a variable.
     int resultValue = [self Add:integerOne secondValue:integerTwo];
     
-    
-    
+    //Step 7 - Bundle the returned integer into an NSNumber and then convert it to a NSString and pass it to the DisplayAlertWithString function.
     BOOL compareResult = [self Compare:integerOne secondValue:integerTwo];
+    NSNumber *addResult = [[NSNumber alloc] initWithInt: resultValue];
+    if (addResult != nil)
+    {
+        NSString *resultString = [addResult stringValue];
+        [self displayAlertWithString:resultString];
+    }
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
@@ -75,10 +76,14 @@
     return newString;
 }
 
-//Step 5 - Create a function called DisplayAlertWithString. This function will take as a parameter an NSString.
--(void)DisplayAlertWithString:(NSString *)stepFiveString
+//Step 5 - Create a function called displayAlertWithString. This function will take as a parameter an NSString.
+-(void)displayAlertWithString:(NSString *)stringText
 {
-    UIAlertView *stringAlert = [[UIAlertView alloc] initWithTitle:@"Alert View Test" message: stringResult delegate: nil cancelButtonTitle:@"OK" otherButtonTitles: nil]; 
+    UIAlertView *stringAlert = [[UIAlertView alloc] initWithTitle:@"Number String Test" message: (@"The number is %@",stringText) delegate: nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    if (stringAlert != nil)
+    {
+        [stringAlert show];
+    }
 }
 
 @end
