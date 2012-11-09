@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
-{
+{/*
     UILabel *title;
     UILabel *authorHead;
     UILabel *authorText;
@@ -19,7 +19,8 @@
     UILabel *summaryText;
     UILabel *itemList;
     UILabel *itemDetails;
-    
+*/    
 }
 
+-(void)printDebugInfo:(NSString*)debugString;
 @end
