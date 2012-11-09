@@ -15,5 +15,6 @@
 -(int)Add:(NSInteger)valueOne secondValue:(NSInteger)valueTwo;
 -(BOOL)Compare:(NSInteger)valueOne secondValue:(NSInteger)valueTwo;
 -(NSString *)Append:(NSString *)stringOne secondString:(NSString *)stringTwo;
+-(void)displayAlertWithString:(NSString *)stringText;
 
 @end

@@ -14,40 +14,6 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad
-{
-    //These are the variables used in the functions below.
-    int integerOne = 8;
-    int integerTwo = 8;
-    NSString *stringOne = @"This is not the ";
-    NSString *stringTwo = @"string to use.";
-    
-    //Step 4 - Call the Append function with two NSStrings. Capture the result and display a UIAlertView with the appended string using displayAlertWithString.
-    NSString *stringResult = [self Append:(stringOne) secondString:(stringTwo)];
-    [self displayAlertWithString:stringResult];
-    
-    //Step 6 - Call the Add function passing in two integer values. Capture the return of this function into a variable.
-    int resultValue = [self Add:integerOne secondValue:integerTwo];
-    
-    //Step 7 - Bundle the returned integer into an NSNumber and then convert it to a NSString and pass it to the DisplayAlertWithString function.
-    BOOL compareResult = [self Compare:integerOne secondValue:integerTwo];
-    NSNumber *addResult = [[NSNumber alloc] initWithInt: resultValue];
-    if (addResult != nil)
-    {
-        NSString *resultString = [addResult stringValue];
-        [self displayAlertWithString:resultString];
-    }
-    
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 //Step 1 - Create a function called Add. This function will take two NSInteger or int types and return the result of an addition between these two.
 -(int)Add:(NSInteger)valueOne secondValue:(NSInteger)valueTwo
 {
@@ -79,11 +45,70 @@
 //Step 5 - Create a function called displayAlertWithString. This function will take as a parameter an NSString.
 -(void)displayAlertWithString:(NSString *)stringText
 {
-    UIAlertView *stringAlert = [[UIAlertView alloc] initWithTitle:@"Number String Test" message: (@"The number is %@",stringText) delegate: nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    UIAlertView *stringAlert = [[UIAlertView alloc] initWithTitle:@"String Test" message: stringText delegate: nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
     if (stringAlert != nil)
     {
         [stringAlert show];
     }
 }
 
+- (void)viewDidLoad
+{
+    //These are the variables used in the functions below.
+    int integerOne = 7;
+    int integerTwo = 7;
+    NSString *stringOne = @"This is a ";
+    NSString *stringTwo = @"string I have split apart.";
+    
+    //Step 4 - Call the Append function with two NSStrings. Capture the result and display a UIAlertView with the appended string using displayAlertWithString.
+    NSString *stringResult = [self Append:(stringOne) secondString:(stringTwo)];
+    [self displayAlertWithString:stringResult];
+    
+    //Step 6 - Call the Add function passing in two integer values. Capture the return of this function into a variable.
+    int resultValue = [self Add:integerOne secondValue:integerTwo];
+    
+    //Step 7 - Bundle the returned integer into an NSNumber and then convert it to a NSString and pass it to the DisplayAlertWithString function.
+    NSNumber *addResult = [[NSNumber alloc] initWithInt: resultValue];
+    
+  
+        //Step 8 - Give it some text for the title. The message will read, "The number is 00". Replace the 00 with the integer passed into the function.
+    if (addResult != nil)
+    {
+        NSMutableString *resultString = [[NSMutableString alloc] initWithString: @"The number is "];
+        NSString *result = [addResult stringValue];
+        [resultString appendString: result];
+        [self displayAlertWithString:resultString];
+    }
+    
+    //Step 9 - Call the Compare function with two integer values. If Compare returns YES, display an UIAlertView both with the input values and the result using the DisplayAlertWithString function
+    BOOL compareResult = [self Compare:integerOne secondValue:integerTwo];
+    if (compareResult == YES)
+    {
+        NSNumber *comparedNumber = [[NSNumber alloc] initWithInt: integerOne];
+        if (comparedNumber != nil)
+        {
+            NSMutableString *compareString = [[NSMutableString alloc] initWithString:@"Both numbers were "];
+            NSString *comparedNumberString = [comparedNumber stringValue];
+            [compareString appendString: comparedNumberString];
+            [compareString appendString: @"! They are the same!"];
+            [self displayAlertWithString:compareString];
+        }
+    }
+    else
+    {
+        NSString *noMatch = [[NSString alloc] initWithString: @"The two integers don't match."];
+        [self displayAlertWithString: noMatch];
+    }
+    
+    [super viewDidLoad];
+	// Do any additional setup after loading the view, typically from a nib.
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+                                
 @end
