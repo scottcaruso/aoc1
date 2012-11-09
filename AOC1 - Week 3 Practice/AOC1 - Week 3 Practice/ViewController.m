@@ -19,22 +19,18 @@
     //These are the variables used in the functions below.
     int integerOne = 8;
     int integerTwo = 8;
+    NSString *stringOne = @"This is the ";
+    NSString *stringTwo = @"string to use.";
     
     //Create a function called Add. This function will take two NSInteger or int types and return the result of an addition between these two.
     int resultValue = [self Add:integerOne secondValue:integerTwo];
-    NSLog(@"%d",resultValue);
-    
 
     //Create a BOOL function called Compare that takes two NSInteger values. Return YES or NO based on whether the values are equal.
     BOOL compareResult = [self Compare:integerOne secondValue:integerTwo];
-    if (compareResult == YES)
-    {
-        NSLog(@"The numbers are the same!");
-    }
-    else
-    {
-        NSLog(@"The numbers are not the same.");
-    }
+    
+    //Create a function called Append. This function will take two NSStrings and return a new NSString containing the appended strings using an NSMutableString and the Append method.
+    NSString *stringResult = [self Append:(stringOne) secondString:(stringTwo)];
+    NSLog(@"%@",stringResult);
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
@@ -60,6 +56,18 @@
     {
         return YES;
     }
+    else
+    {
+        return NO;
+    }
+}
+
+//This is the Append function that is called in viewDidLoad.
+-(NSString *)Append:(NSString *)stringOne secondString:(NSString *)stringTwo
+{
+    NSMutableString *newString = [[NSMutableString alloc] initWithString: stringOne];
+    [newString appendString:(stringTwo)];
+    return newString;
 }
 
 @end
