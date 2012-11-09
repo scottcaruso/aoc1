@@ -96,7 +96,7 @@
     }
     else
     {
-        NSString *noMatch = [[NSString alloc] initWithString: @"The two integers don't match."];
+        NSString *noMatch = @"The two integers don't match.";
         [self displayAlertWithString: noMatch];
     }
     
