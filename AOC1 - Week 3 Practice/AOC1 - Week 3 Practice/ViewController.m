@@ -19,7 +19,7 @@
     //These are the variables used in the functions below.
     int integerOne = 8;
     int integerTwo = 8;
-    NSString *stringOne = @"This is the ";
+    NSString *stringOne = @"This is not the ";
     NSString *stringTwo = @"string to use.";
     
     //Create a function called Add. This function will take two NSInteger or int types and return the result of an addition between these two.
@@ -29,8 +29,15 @@
     BOOL compareResult = [self Compare:integerOne secondValue:integerTwo];
     
     //Create a function called Append. This function will take two NSStrings and return a new NSString containing the appended strings using an NSMutableString and the Append method.
+    //Call the Append function with two NSStrings. Capture the result and display a UIAlertView with the appended string using displayAlertWithString.
     NSString *stringResult = [self Append:(stringOne) secondString:(stringTwo)];
-    NSLog(@"%@",stringResult);
+    
+    //This is the part that calls the alertView.
+    UIAlertView *stringAlert = [[UIAlertView alloc] initWithTitle:@"Alert View Test" message: stringResult delegate: nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    if (stringAlert != nil)
+    {
+        [stringAlert show];
+    }
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
