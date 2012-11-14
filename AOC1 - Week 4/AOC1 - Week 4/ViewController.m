@@ -16,10 +16,11 @@
 
 - (void)viewDidLoad
 {
-    UIAlertView *testAlert = [[UIAlertView alloc] initWithTitle:@"Error!" message:@"Please select a destiny!" delegate:self cancelButtonTitle:@"Go Left" otherButtonTitles:@"Go Right",@"Go Straight", nil];
+    UIAlertView *testAlert = [[UIAlertView alloc] initWithTitle:@"Error!" message:@"Please login" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
     
     if (testAlert != nil)
     {
+        testAlert.alertViewStyle = UIAlertViewStylePlainTextInput;
         [testAlert show];
     }
     
@@ -29,28 +30,10 @@
 
 -(void)alertView:(UIAlertView *)testAlert clickedButtonAtIndex: (NSInteger) buttonIndex
 {
-    switch (buttonIndex)
+    UITextField *textField = [testAlert textFieldAtIndex:0];
+    if (textField != nil)
     {
-        case 0:
-        {
-            
-        }
-        break;
-        case 1:
-        {
-            
-        }
-        break;
-        case 2:
-        {
-    
-        }
-        break;
-        default:
-        {
-            
-        }
-        break;
+        NSLog(@"%@", textField.text);
     }
 }
 
