@@ -16,25 +16,17 @@
 
 - (void)viewDidLoad
 {
-    UIAlertView *testAlert = [[UIAlertView alloc] initWithTitle:@"Error!" message:@"Please login" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    NSDate *date = [NSDate date];
     
-    if (testAlert != nil)
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    if (dateFormatter != nil)
     {
-        testAlert.alertViewStyle = UIAlertViewStylePlainTextInput;
-        [testAlert show];
+        [dateFormatter setDateFormat:@"yyyy.MM.dd G 'at' HH:mm:ss zzz"];
+        NSString *newString = [dateFormatter stringFromDate:date];
     }
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-}
-
--(void)alertView:(UIAlertView *)testAlert clickedButtonAtIndex: (NSInteger) buttonIndex
-{
-    UITextField *textField = [testAlert textFieldAtIndex:0];
-    if (textField != nil)
-    {
-        NSLog(@"%@", textField.text);
-    }
 }
 
 - (void)didReceiveMemoryWarning
