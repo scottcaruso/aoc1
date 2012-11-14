@@ -27,6 +27,33 @@
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
+-(void)alertView:(UIAlertView *)testAlert clickedButtonAtIndex: (NSInteger) buttonIndex
+{
+    switch (buttonIndex)
+    {
+        case 0:
+        {
+            
+        }
+        break;
+        case 1:
+        {
+            
+        }
+        break;
+        case 2:
+        {
+    
+        }
+        break;
+        default:
+        {
+            
+        }
+        break;
+    }
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
