@@ -10,7 +10,10 @@
 
 @interface ViewController : UIViewController <UIAlertViewDelegate>
 {
-    UITextField *textField;
+    UITextField *enterUsername;
+    UILabel *username;
+    UIButton *loginButton;
+    UILabel *usernameDirections;
 }
 
 @end

@@ -381,6 +381,7 @@
 				GCC_PREFIX_HEADER = "AOC1 - Week 4/AOC1 - Week 4-Prefix.pch";
 				INFOPLIST_FILE = "AOC1 - Week 4/AOC1 - Week 4-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -392,6 +393,7 @@
 				GCC_PREFIX_HEADER = "AOC1 - Week 4/AOC1 - Week 4-Prefix.pch";
 				INFOPLIST_FILE = "AOC1 - Week 4/AOC1 - Week 4-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
