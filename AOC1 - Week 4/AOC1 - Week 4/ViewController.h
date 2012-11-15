@@ -16,6 +16,8 @@
     UILabel *usernameDirections;
     UIButton *dateButton;
     UIAlertView *dateTimeAlert;
+    UIButton *authorInfo;
+    UILabel *authorDetails;
 }
 
 @end
