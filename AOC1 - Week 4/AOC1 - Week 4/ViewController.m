@@ -37,9 +37,10 @@
     {
         loginButton.frame = CGRectMake(240.0f, 60.0f, 70.0f, 30.0f);
         loginButton.tintColor = [UIColor blueColor];
+        loginButton.tag = 0; //Giving the login button a tag.
         [loginButton setTitle:@"Login" forState:UIControlStateNormal];
         //Adding a target to the button to the onClick function.
-        [loginButton addTarget:self action:@selector(onClick) forControlEvents:UIControlEventTouchUpInside];
+        [loginButton addTarget:self action:@selector(onClick:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:loginButton];
     }
     //UILabel to direct the user to enter a username.
@@ -52,6 +53,19 @@
         [usernameDirections setTextColor:[UIColor whiteColor]];
         [self.view addSubview:usernameDirections];
     }
+    //UIButton for Show Date
+    dateButton = [UIButton buttonWithType: UIButtonTypeRoundedRect];
+    if (dateButton != nil)
+    {
+        dateButton.frame = CGRectMake(10.0f, 175.0f, 100.0f, 30.0f);
+        dateButton.tintColor = [UIColor blueColor];
+        dateButton.tag = 1; //Giving the date button a tag.
+        [dateButton setTitle:@"Show Date" forState:UIControlStateNormal];
+        //Adding a target to the button to the onClick function.
+        [dateButton addTarget:self action:@selector(onClick:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:dateButton];
+    }
+
 
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
@@ -64,18 +78,26 @@
 }
 
 //Onclick function for the button(s)
--(void)onClick
+-(void)onClick:(UIButton*)button
 {
-    //Checks to verify if username field is blank or not.
-    if (enterUsername.text == NULL)
+    if (button.tag == 0)
     {
-        usernameDirections.text = @"Username cannot be empty.";
-    } else
-    //Passes the newusername into a String.
-    {
-        NSString *newDirections = [NSString stringWithFormat:@"User: %@ has been logged in.",enterUsername.text];
-        usernameDirections.text = newDirections;
+        //Checks to verify if username field is blank or not.
+        if (enterUsername.text == NULL)
+        {
+            usernameDirections.text = @"Username cannot be empty.";
+        } else
+        //Passes the newusername into a String.
+        {
+            NSString *newDirections = [NSString stringWithFormat:@"User: %@ has been logged in.",enterUsername.text];
+            usernameDirections.text = newDirections;
+        }
     }
+    else if (button.tag == 1)
+    {
+        NSLog(@"Date button pressed!");
+    }
+    
 }
 
 @end

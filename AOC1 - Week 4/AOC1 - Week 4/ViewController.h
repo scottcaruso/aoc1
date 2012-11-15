@@ -14,6 +14,7 @@
     UILabel *username;
     UIButton *loginButton;
     UILabel *usernameDirections;
+    UIButton *dateButton;
 }
 
 @end
