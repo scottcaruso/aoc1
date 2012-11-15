@@ -95,7 +95,20 @@
     }
     else if (button.tag == 1)
     {
-        NSLog(@"Date button pressed!");
+        NSDate *currentDateTime = [NSDate date];
+        NSDateFormatter *currentDateTimeFormat = [[NSDateFormatter alloc] init];
+        if (currentDateTimeFormat != nil)
+        {
+            //
+            [currentDateTimeFormat setDateStyle:NSDateFormatterLongStyle];
+            [currentDateTimeFormat setTimeStyle:NSDateFormatterFullStyle];
+            NSString *dateTimeString = [currentDateTimeFormat stringFromDate:currentDateTime];
+            dateTimeAlert = [[UIAlertView alloc] initWithTitle:@"Current Date/Time" message:dateTimeString delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            if (dateTimeString != nil)
+            {
+                [dateTimeAlert show];
+            }
+        }
     }
     
 }

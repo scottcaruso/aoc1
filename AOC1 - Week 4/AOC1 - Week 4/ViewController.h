@@ -15,6 +15,7 @@
     UIButton *loginButton;
     UILabel *usernameDirections;
     UIButton *dateButton;
+    UIAlertView *dateTimeAlert;
 }
 
 @end
